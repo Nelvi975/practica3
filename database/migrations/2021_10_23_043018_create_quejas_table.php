@@ -15,13 +15,14 @@ class CreateQuejasTable extends Migration
     {
         Schema::create('quejas', function (Blueprint $table) {
             $table->id();
-            $table->string("autogeneradoQueja", 110);
-            $table->string("motivoQueja", 60);
-            $table->date("fechaRecepcion");
+            $table->string("autogenerado_queja", 110);
+            $table->string("motivo_queja", 60);
+            $table->date("fecha_recepcion");
             $table->foreignId("id_clientes")->constrained("clientes");
             $table->foreignId("id_usuarios")->constrained("users");
         });
     }
+
 
     /**
      * Reverse the migrations.

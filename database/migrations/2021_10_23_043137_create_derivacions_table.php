@@ -31,3 +31,4 @@ class CreateDerivacionsTable extends Migration
         Schema::dropIfExists('derivacions');
     }
 }
+

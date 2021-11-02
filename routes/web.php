@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QuejaController;
+
 
 
 /*
@@ -27,6 +27,6 @@ Route::get('/login', function (){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/Queja', QuejaController::class);//->middleware(["auth"]);
+Route::resource('/Queja',QuejaController::class);//->middleware(["auth"]);
 Route::resource('/Cliente', ClienteController::class);//->middleware(["auth"]);
 

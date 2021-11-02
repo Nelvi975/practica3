@@ -16,7 +16,7 @@ class ClienteController extends Controller
     {
         $cliente = new Cliente();
         $clientes = $cliente->get();
-        return view("clientes.mostrar_cliente", ["clientes"=>$clientes]);
+        return view("Clientes.mostrar_cliente", ["clientes"=>$clientes]);
     }
 
     /**
@@ -39,10 +39,10 @@ class ClienteController extends Controller
     {
         $cliente = new Cliente();
         $cliente-> codigo = $request-> codigo;
-        $cliente-> nombresCliente = $request-> nombreCliente;
-        $cliente-> direccionCliente = $request-> direccionCliente;
-        $cliente-> emailCliente= $request-> emailCliente;
-        $cliente-> calificacionCliente = $request-> calificacionCliente;
+        $cliente-> nombresCliente = $request-> nombre_cli;
+        $cliente-> direccionCliente = $request-> direccion_cli;
+        $cliente-> emailCliente= $request-> email_cli;
+        $cliente-> calificacionCliente = $request-> calificacion_cli;
         $cliente-> id_servicios = $request-> id_servicios;
         $cliente->save();
         return redirect(Route("Cliente.index"));
@@ -64,13 +64,7 @@ class ClienteController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
+     * @return
     /**
      * Update the specified resource in storage.
      *
@@ -91,6 +85,8 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
+
+
 }

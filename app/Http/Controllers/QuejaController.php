@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Queja;
 use Illuminate\Http\Request;
+
 
 class QuejaController extends Controller
 {
@@ -14,9 +14,9 @@ class QuejaController extends Controller
      */
     public function index()
     {
-        $queja = new queja();
-        $quejas = $queja->get();
-        return view("reclamos.mostrar_Queja", ["quejas"=>$quejas]);
+        $queja = new Queja();
+        $resultados = $queja->get();
+        return view("Queja.mostrar", ["queja"=>$resultados]);
     }
 
     /**
@@ -26,9 +26,7 @@ class QuejaController extends Controller
      */
     public function create()
     {
-      return view("reclamos.crear_queja");
-
-
+        return view('Queja.crear');
 
     }
 
@@ -42,13 +40,14 @@ class QuejaController extends Controller
     {
         $queja = new Queja();
         $queja-> id = $request-> id;
-        $queja-> autogeneradoQueja = $request-> autogeneradoQueja;
-        $queja-> motivoQueja = $request-> motivoQueja;
-        $queja-> fechaRecepcion = $request-> fechaRecepcion;
-        $queja-> id_clientes= $request-> id_clientes;
-        $queja-> id_usuarios = $request-> id_usuarios;
-        $queja->save();
+        $queja-> autogenerado_queja = $request-> autogenerado_queja;
+        $queja-> motivo_queja = $request-> motivo_queja;
+        $queja-> fecha_recepcion= $request-> fecha_recepcion;
+        $cliente-> id_clientes = $request-> id_clientes;
+        $cliente-> id_servicios = $request-> id_servicios;
+        $cliente->save();
         return redirect(Route("Queja.index"));
+
     }
 
     /**

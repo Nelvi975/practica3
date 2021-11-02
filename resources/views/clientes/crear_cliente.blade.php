@@ -12,10 +12,10 @@
                         <form method="post" action="/Cliente">
                             @csrf
                             <input type="text" name="codigo" placeholder="Cod"><br>
-                            <input type="text" name="nombreCliente" placeholder="Ingrese nombre"><br>
-                            <input type="text" name="direccionCliente" placeholder="Ingrese direccion"><br>
-                            <input type="text" name="emailCliente" placeholder="Ingrese email del cliente"><br>
-                            <input type="text" name="calificacionCliente" placeholder="1Ingrese calificacion"><br>
+                            <input type="text" name="nombre_cli" placeholder="Ingrese nombre"><br>
+                            <input type="text" name="direccion_cli" placeholder="Ingrese direccion"><br>
+                            <input type="text" name="email_cli" placeholder="Ingrese email del cliente"><br>
+                            <input type="text" name="calificacion_cli" placeholder="Ingrese calificacion"><br>
                             <input type="text" name="id_servicios" placeholder="Ingrese servicios"><br>
                             <input type="submit" name="submit" Value="Guardar">
                         </form>

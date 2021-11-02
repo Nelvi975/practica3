@@ -22,8 +22,8 @@
                         @foreach ($quejas as $queja)
                             <tr>
                                 <td>{{$queja->id}}</td>
-                                <td>{{$queja->autogenado}}</td>
-                                <td>{{$queja->motivo}}</td>
+                                <td>{{$queja->autogenado_queja}}</td>
+                                <td>{{$queja->motivo_queja}}</td>
                                 <td>{{$producto->fecha_recepcion}}</td>
                                 <td>{{$producto->idQueja}}</td>
 
@@ -35,5 +35,4 @@
         </div>
     </div>
 </x-app-layout>
-
 
