@@ -16,7 +16,7 @@ class QuejaController extends Controller
     {
         $queja = new Queja();
         $resultados = $queja->get();
-        return view("Queja.mostrar", ["queja"=>$resultados]);
+        return view("Queja.mostrar", ["quejas"=>$resultados]);
     }
 
     /**
@@ -39,13 +39,12 @@ class QuejaController extends Controller
     public function store(Request $request)
     {
         $queja = new Queja();
-        $queja-> id = $request-> id;
         $queja-> autogenerado_queja = $request-> autogenerado_queja;
         $queja-> motivo_queja = $request-> motivo_queja;
         $queja-> fecha_recepcion= $request-> fecha_recepcion;
-        $cliente-> id_clientes = $request-> id_clientes;
-        $cliente-> id_servicios = $request-> id_servicios;
-        $cliente->save();
+        $queja-> id_clientes = $request-> id_clientes;
+        $queja-> id_usuarios = $request-> id_usuarios;
+        $queja->save();
         return redirect(Route("Queja.index"));
 
     }

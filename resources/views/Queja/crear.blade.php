@@ -10,7 +10,7 @@
 
                     <div class="card-body">
 
-                        <form method="post" action="/Cliente">
+                        <form method="post" action="/Queja">
                             @csrf
                             <input type="text" name="autogenerado_queja" placeholder="autogenerado"><br>
                             <input type="text" name="motivo_queja" placeholder="Ingrese motivo"><br>
