@@ -34,10 +34,10 @@
 
                     <!-- Left Side Of Navbar -->
                     <!-- agregar menu -->
+                    @if(Auth::check())
+                        @if(Auth::user()->rol=="administrador")
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a href="{{route('home')}}" class="nav-link">dashboard</a>
-                            </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-crear" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Queja
@@ -55,11 +55,65 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown-crear">
                                     <a class="dropdown-item" href="{{ route('Cliente.create') }}">Crear Clientes</a>
                                     <a class="dropdown-item" href="{{ route('Cliente.index') }}">Mostrar Clientes</a>
+                                </div> </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-crear" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Servicio
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown-crear">
+                                    <a class="dropdown-item" href="{{ route('Servicio.create') }}">Crear Servicio</a>
+                                    <a class="dropdown-item" href="{{ route('Servicio.index') }}">Mostrar Servicio</a>
                                 </div>
+
+                            </li></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-crear" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Derivacion
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown-crear">
+                                    <a class="dropdown-item" href="{{ route('Derivacion.create') }}">Crear Derivacion</a>
+                                    <a class="dropdown-item" href="{{ route('Derivacion.index') }}">Mostrar Derivacion</a>
+                                </div>
+
+                            </li></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-crear" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Facturacion
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown-crear">
+                                    <a class="dropdown-item" href="{{ route('Facturacion.create') }}">Crear Facturacion</a>
+                                    <a class="dropdown-item" href="{{ route('Facturacion.index') }}">Mostrar Facturacion</a>
+                                </div>
+
+                            </li></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-crear" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Promocion
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown-crear">
+                                    <a class="dropdown-item" href="{{ route('Promocion.create') }}">Crear Promocion</a>
+                                    <a class="dropdown-item" href="{{ route('Promocion.index') }}">Mostrar Promocion</a>
+                                </div>
+
+
 
                             </li>
 
                     </ul>
+                            @elseif (Auth::user()->rol=="trabajador")
+                            <li class="nav-item">
+                                <a href="{{route('home')}}" class="nav-link">dashboard</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-crear" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Queja
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown-crear">
+                                    <a class="dropdown-item" href="{{ route('Queja.create') }}">Crear Queja</a>
+                                    <a class="dropdown-item" href="{{ route('Queja.index') }}">Mostrar Queja</a>
+                                </div>
+                        @endif
+                        @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

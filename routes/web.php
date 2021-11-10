@@ -29,4 +29,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/Queja',QuejaController::class);//->middleware(["auth"]);
 Route::resource('/Cliente', ClienteController::class);//->middleware(["auth"]);
+Route::resource('/Derivacion', DerivacionController::class);//->middleware(["auth"]);
+Route::resource('/Facturacion', FacturacionController::class);//->middleware(["auth"]);
+Route::resource('/Promocion', PromocionController::class);//->middleware(["auth"]);
+Route::resource('/Servicio', ServicioController::class);//->middleware(["auth"]);
 
