@@ -18,7 +18,14 @@
                                 <td>{{$queja->fecha_recepcion}}</td>
                                 <td>{{$queja->id_clientes}}</td>
                                 <td>{{$queja->id_usuarios}}</td>
-
+                                <td><a href="Queja/{{$queja['id']}}/edit">Actualizar</a></td>
+                                <td>
+                                    <form method='post' action='Queja/{{$queja->id}}'>
+                                        <input type='submit' value='Eliminar'>
+                                        @csrf
+                                        @method("DELETE")
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

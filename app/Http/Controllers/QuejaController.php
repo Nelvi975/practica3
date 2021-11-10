@@ -57,7 +57,7 @@ class QuejaController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -68,7 +68,8 @@ class QuejaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $resultato = Queja::find($id);
+        return view('Queja.editar', ["Quejas"=>$resultato]);
     }
 
     /**
@@ -80,7 +81,14 @@ class QuejaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $queja = Queja::find($id);
+        $queja-> autogenerado_queja = $request-> autogenerado_queja;
+        $queja-> motivo_queja = $request-> motivo_queja;
+        $queja-> fecha_recepcion= $request-> fecha_recepcion;
+        $queja-> id_clientes = $request-> id_clientes;
+        $queja-> id_usuarios = $request-> id_usuarios;
+        $queja->save();
+        return redirect(Route("Queja.index"));
     }
 
     /**
@@ -91,6 +99,8 @@ class QuejaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $queja = Queja::find($id);
+        $queja->delete();
+        return redirect(Route("Queja.index"));
     }
 }
